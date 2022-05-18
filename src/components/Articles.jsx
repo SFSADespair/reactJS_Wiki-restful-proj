@@ -1,6 +1,6 @@
 import { data } from 'autoprefixer'
 import React, { useState, useEffect} from 'react'
-import Art from './art'
+import Arts from './arts'
 
 const Articles = () => {
     const [art, setArticles] = useState([])
@@ -21,7 +21,10 @@ const Articles = () => {
 
             </div>
             {art.map(article => (
-                <Art key={article._id} article={article.title} />
+                <>
+                    <Arts key={article._id} article={article.title} id={article._id} />
+                    <hr />
+                </>
             ))}
         </>
     )
